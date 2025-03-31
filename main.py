@@ -3,9 +3,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
-import openai
+import opena
 
-# Initialize OpenAI API (replace 'your-api-key' with an actual API key)
+
 openai.api_key = 'your-api-key'
 
 
@@ -82,17 +82,16 @@ def plot_forecast(expenses, model):
     plt.show()
 
 
-# Collect user data
+
 expenses, descriptions, categories = collect_user_data()
 
-# Train model
+
 model = train_model(expenses)
 
-# Predict next month's expense
 predicted_expense = predict_expense(model)
 print(f"Predicted expense for next month: ${predicted_expense:.2f}")
 
-# Generate insights & suggestions
+
 insights, category_spending = generate_spending_insights(expenses, descriptions, categories)
 budget_suggestions = generate_budget_suggestions(expenses, predicted_expense)
 print(insights)
@@ -100,8 +99,7 @@ print("Category-wise spending:")
 print(category_spending)
 print(budget_suggestions)
 
-# Plot forecast
-plot_forecast(expenses, model)
 
-# Launch AI chatbot interface
+plot_forecast(expenses, model)
+   
 ai_chatbot()
